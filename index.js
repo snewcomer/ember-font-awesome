@@ -22,13 +22,6 @@ module.exports = {
     });
   },
 
-  postprocessTree(type, tree) {
-    if (this.app.env === 'production' && type === 'all') {
-      return new PruneUnusedIcons(tree, { addon: this });
-    }
-    return tree;
-  },
-
   treeForVendor() {
     // Get configured fontFormats
     let fontFormats = this.hostBuildOptions.fontFormats || ['eot', 'svg', 'ttf', 'woff', 'woff2', 'otf'];
